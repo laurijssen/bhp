@@ -22,7 +22,7 @@ token = sys.argv[1]
 
 def connect_to_github():
     gh = login(token=token)
-    repo = gh.repository("laurijssen", "blackhatpython")
+    repo = gh.repository("laurijssen", "bhp")
     branch = repo.branch("master")
 
     return gh,repo,branch
