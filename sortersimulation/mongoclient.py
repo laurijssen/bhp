@@ -32,7 +32,7 @@ def example_functions(col):
 
 def read_from_sql_server_compare_mongo(col):
     with pyodbc.connect('Driver={SQL Server};'
-                      'Server=w2k16vdb02;'
+                      'Server=w2kdb02;'
                       'Database=Rops;'
                       'Trusted_Connection=yes;') as conn:
         cursor = conn.cursor()
